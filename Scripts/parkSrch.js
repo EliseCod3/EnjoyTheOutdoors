@@ -2,12 +2,11 @@
 
 window.onload = () => {
     loadStatesList();
-
-    loadParkTable();
+    selectState();
 };
 
 const statesList = document.getElementById("states-List");
-
+const infoTbl = document.getElementById("parkInfoTbl");
 
 function loadStatesList() {
     locationsArray.forEach((location) => {
@@ -16,32 +15,43 @@ function loadStatesList() {
     });
 }
 
-function loadParkTable() {
-    const parkTblBody = document.getElementById("parkTblBody");
+function selectState() {
+    const selectedState = statesList.value;
     for (const nationalPark of nationalParksArray) {
-        buildParkRow(parkTblBody, nationalPark);
+        if (nationalPark.State == selectedState) {
+            loadParkTable(nationalPark)
+        }
     }
 }
 
-function buildParkRow(tableBody, nationalPark) {
+
+function loadParkTable(nationalPark) {
+    const parkTblBody = document.getElementById("parkTblBody");
+    
+    buildParkRow(parkTblBody, nationalPark.LocationName, nationalPark.Address, nationalPark.City, nationalPark.State, nationalPark.ZipCode, nationalPark.Phone);
+
+}
+
+function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
+    
     let row = tableBody.insertRow(-1);
 
     let cell1 = row.insertCell(0);
-    cell1.innerText = nationalPark.LocationName;
+    cell1.innerText = name;
 
-    let cell2 = row.insertCell(0);
-    cell2.innerText = nationalPark.Address;
+    let cell2 = row.insertCell(1);
+    cell2.innerText = address;
 
-    let cell3 = row.insertCell(0);
-    cell3.innerText = nationalPark.City;
+    let cell3 = row.insertCell(2);
+    cell3.innerText = city;
 
-    let cell4 = row.insertCell(0);
-    cell4.innerText = nationalPark.State;
+    let cell4 = row.insertCell(3);
+    cell4.innerText = state;
 
-    let cell5 = row.insertCell(0);
-    cell5.innerText = nationalPark.ZipCode;
+    let cell5 = row.insertCell(4);
+    cell5.innerText = zipCode;
 
-    let cell6 = row.insertCell(0);
-    cell6.innerText = nationalPark.Phone;
+    let cell6 = row.insertCell(5);
+    cell6.innerText = phone;
 
 }
