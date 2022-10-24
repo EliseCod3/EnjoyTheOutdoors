@@ -2,3 +2,10 @@
     align-content: center;
     text-align: center;
 }
+div {
+    display: inline-flexbox;
+}
+header {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
