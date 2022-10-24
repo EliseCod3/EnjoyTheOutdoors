@@ -2,7 +2,6 @@
 
 window.onload = () => {
   loadStatesList();
-  selectState();
 };
 
 const statesList = document.getElementById("states-List");
@@ -15,6 +14,8 @@ function loadStatesList() {
 }
 
 function selectState() {
+  const parkTblBody = document.getElementById("parkTblBody");
+  parkTblBody.innerHTML = "";
   const selectedState = statesList.value;
   for (const nationalPark of nationalParksArray) {
     if (nationalPark.State == selectedState) {

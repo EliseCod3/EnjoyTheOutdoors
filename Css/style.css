@@ -4,8 +4,10 @@
 }
 div {
     display: inline-flexbox;
+    margin: 2rem;
 }
 header {
     font-size: 3rem;
     margin-bottom: 1rem;
+    background-image: url(/Images/Eisenhower-StoryImage_2.j);
 }
