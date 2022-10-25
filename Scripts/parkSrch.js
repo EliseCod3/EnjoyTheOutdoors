@@ -5,6 +5,10 @@ window.onload = () => {
 };
 
 const statesList = document.getElementById("states-List");
+const parkList = document.getElementById("park-Type-List");
+const parkTbl = document.getElementById("parkTbl");
+const statesListSection = document.getElementById("state-List-Section");
+const parkTypeSection = document.getElementsByClassName("park-type-section");
 
 function loadStatesList() {
   locationsArray.forEach((location) => {
@@ -13,7 +17,35 @@ function loadStatesList() {
   });
 }
 
+function loadParkTypeList() {
+  parkTypesArray.forEach(parkType => {
+    let option = new Option(parkType);
+    parkList.appendChild(option);
+  });
+}
+
+function selectParkType() {
+  selectPark();
+}
+
+function selectPark() {
+  parkTypeSection.style.display = "inline-block";
+  const parkTblBody = document.getElementById("parkTblBody");
+  parkTblBody.innerHTML = "";
+  const selectedParkType = parkList.value;
+  for (const nationalPark of nationalParksArray) {
+    if (nationalPark.LocationName.includes(selectedParkType)) {
+      loadParkTable(nationalPark);
+    }
+  }
+}
+
+function selectLocation() {
+  selectState(); 
+}
+
 function selectState() {
+  statesListSection.style.display = "inline-block";
   const parkTblBody = document.getElementById("parkTblBody");
   parkTblBody.innerHTML = "";
   const selectedState = statesList.value;
@@ -26,6 +58,7 @@ function selectState() {
 
 function loadParkTable(nationalPark) {
   const parkTblBody = document.getElementById("parkTblBody");
+  parkTbl.style.display = "inline-block";
 
   buildParkRow(
     parkTblBody,
@@ -61,9 +94,22 @@ function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
 
   let cell7 = row.insertCell(6);
 
-  nationalParksArray.forEach(park => {
-    if (park.Visit == true) {
-      cell7.innerText = park.Visit;
+  nationalParksArray.forEach(nationalPark => {
+    if (nationalPark.Visit) {
+      const web = document.createElement("a");
+      let link = document.createTextNode(nationalPark.Visit);
+      web.appendChild(link);
+      web.innerText = "Visit";
+      web.href = nationalPark.Visit;
+      web.target = "_blank";
+      cell7.appendChild(web);
     }
   });
+
+
+  // nationalParksArray.forEach(park => {
+  //   if (park.Visit == true) {
+  //     cell7.innerText = park.Visit;
+  //   }
+  // });
 }
