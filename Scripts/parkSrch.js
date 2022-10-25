@@ -58,4 +58,12 @@ function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
 
   let cell6 = row.insertCell(5);
   cell6.innerText = phone;
+
+  let cell7 = row.insertCell(6);
+
+  nationalParksArray.forEach(park => {
+    if (park.Visit == true) {
+      cell7.innerText = park.Visit;
+    }
+  });
 }
