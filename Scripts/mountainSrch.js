@@ -2,6 +2,7 @@
 // grab elements from html
 const mountainDropdown = document.getElementById("mountian-dropdown-list");
 const displaySection = document.getElementById("display-section");
+const viewAllBtn = document.getElementById("view-all-btn");
 
 // Add the datalist of mountains to html dropdown
 function loadMountainList() {
@@ -16,9 +17,15 @@ function selectMountain() {
     const selectedMountain = mountainDropdown.value;
     for (const mountain of mountainsArray) {
         if (mountain.name == selectedMountain) {
-            buildCard(mountain)
+            buildCard(mountain);
         }
     }
+}
+
+function loadAllMountains() {
+    mountainsArray.forEach((mountain) => {
+        buildCard(mountain);
+    });
 }
 
 // create the card to be displayed
@@ -65,11 +72,12 @@ function buildCard(mountain) {
     const divContainer = document.createElement("div");
     divContainer.className = "card-body";
     cardSection.appendChild(divContainer);
-    divContainer.append(cardTitle, cardDescription, elevation, coords, effort, removeBtn);
+    divContainer.append(cardImg, cardTitle, cardDescription, elevation, coords, effort, removeBtn);
 }
 
 // calling the action of functions
 window.onload = () => {
     loadMountainList();
     mountainDropdown.onchange = selectMountain;
+    viewAllBtn.onclick = loadAllMountains;
   };
