@@ -5,6 +5,8 @@ const byLocationField = document.getElementById("byState");
 const byTypeField = document.getElementById("byType");
 const changeableLabel = document.getElementById("changeable-label");
 const parkTblBody = document.getElementById("parkTblBody");
+const viewAllBtn = document.getElementById("view-all-btn");
+
 
 const parkTbl = document.getElementById("parkTbl");
 // const statesListSection = document.getElementById("state-List-Section");
@@ -78,6 +80,12 @@ function loadParkTable() {
   }
 }
 
+function loadAllParks() {
+  nationalParksArray.forEach(nationalPark => {
+    buildParkRow(parkTblBody, nationalPark)
+  });
+}
+
 function buildParkRow(tableBody, nationalPark) {
   let row = tableBody.insertRow(-1);
 
@@ -122,4 +130,5 @@ function buildParkRow(tableBody, nationalPark) {
 window.onload = () => {
   onclick = loadSearchType;
   searchField.onchange = loadParkTable;
+  viewAllBtn.onclick = loadAllParks;
 };
