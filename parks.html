@@ -30,17 +30,20 @@
     </div>
 
     <div class="container">
-      <input type="radio" name="selectBtn" id="byState">
+      <input type="radio" name="selectBtn" id="byState" checked>
       <label for="byState">By State</label>
 
       <input type="radio" name="selectBtn" id="byType">
       <label for="byType">By Type</label>
 
-      <button id="view-all-btn" type="submit" class="btn btn-dark">View all National Parks</button>
+      <input type="radio" name="selectBtn" id="byAll">
+      <label for="byType">All</label>      
+
+      <!-- <button id="view-all-btn" type="submit" class="btn btn-dark">View all National Parks</button> -->
     </div>
 
-    <div>
-      <label id="changeable-label">^Choose Search Type</label>
+    <div id="search-section">
+      <label id="changeable-label"></label>
       <select id="search-field">
       </select>
     </div>

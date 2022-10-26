@@ -3,14 +3,21 @@
 const searchField = document.getElementById("search-field");
 const byLocationField = document.getElementById("byState");
 const byTypeField = document.getElementById("byType");
+const byAllField = document.getElementById("byAll");
 const changeableLabel = document.getElementById("changeable-label");
 const parkTblBody = document.getElementById("parkTblBody");
 const viewAllBtn = document.getElementById("view-all-btn");
-
+const searchSection = document.getElementById("search-section");
 
 const parkTbl = document.getElementById("parkTbl");
 // const statesListSection = document.getElementById("state-List-Section");
 // const parkTypeSection = document.getElementsByClassName("park-type-section");
+
+function loadAllParks() {
+  nationalParksArray.forEach((nationalPark) => {
+    buildParkRow(parkTblBody, nationalPark)
+  });
+}
 
 function loadSearchType() {
   searchField.innerText = "";
@@ -18,17 +25,22 @@ function loadSearchType() {
   searchField.appendChild(option);
 
   if (byLocationField.checked) {
+    searchSection.style.display = "block";
     changeableLabel.innerHTML = "States/Territories";
     locationsArray.forEach((location) => {
       let option = new Option(location, location);
       searchField.appendChild(option);
     });
   } else if (byTypeField.checked) {
+    searchSection.style.display = "block";
     changeableLabel.innerHTML = "Park Type";
     parkTypesArray.forEach((parkType) => {
       let option = new Option(parkType, parkType);
       searchField.appendChild(option);
     });
+  } else if (byAllField.checked) {
+    searchSection.style.display = "none";
+    loadAllParks();
   }
 }
 
@@ -80,11 +92,7 @@ function loadParkTable() {
   }
 }
 
-function loadAllParks() {
-  nationalParksArray.forEach(nationalPark => {
-    buildParkRow(parkTblBody, nationalPark)
-  });
-}
+
 
 function buildParkRow(tableBody, nationalPark) {
   let row = tableBody.insertRow(-1);
@@ -128,7 +136,10 @@ function buildParkRow(tableBody, nationalPark) {
 }
 
 window.onload = () => {
-  onclick = loadSearchType;
+  // viewAllBtn.onclick = loadAllParks;
+  loadSearchType();
+  byLocationField.onclick = loadSearchType;
+  byAllField.onclick = loadSearchType;
+  byTypeField.onclick = loadSearchType;
   searchField.onchange = loadParkTable;
-  viewAllBtn.onclick = loadAllParks;
 };
