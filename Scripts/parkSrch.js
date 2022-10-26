@@ -40,7 +40,8 @@ function loadSearchType() {
     });
   } else if (byAllField.checked) {
     searchSection.style.display = "none";
-    loadAllParks();
+    // loadAllParks();
+    loadParkTable();
   }
 }
 
@@ -67,7 +68,7 @@ function loadSearchType() {
 
 function loadParkTable() {
   parkTbl.style.display = "inline-block";
-  parkTblBody.innerHTML = "";
+  // parkTblBody.innerHTML = "";
 
   const selectedValue = searchField.value;
 
