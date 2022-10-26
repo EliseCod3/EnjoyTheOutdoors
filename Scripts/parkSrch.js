@@ -100,8 +100,7 @@ function buildParkRow(tableBody, nationalPark) {
   cell6.innerText = nationalPark.Phone;
 
   let cell7 = row.insertCell(6);
-  
-    if (nationalPark.Visit) {
+  if (nationalPark.Visit) {
       const web = document.createElement("a");
       let link = document.createTextNode(nationalPark.Visit);
       web.appendChild(link);
@@ -109,7 +108,7 @@ function buildParkRow(tableBody, nationalPark) {
       web.href = nationalPark.Visit;
       web.target = "_blank";
       cell7.appendChild(web);
-    }
+  }
 
   
 
