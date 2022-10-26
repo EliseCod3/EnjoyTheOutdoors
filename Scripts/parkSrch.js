@@ -22,6 +22,7 @@ function loadAllParks() {
 function loadSearchType() {
   searchField.innerText = "";
   parkTblBody.innerHTML = "";
+  parkTbl.style.display = "none";
   let option = new Option("Select...", " ");
   searchField.appendChild(option);
 
