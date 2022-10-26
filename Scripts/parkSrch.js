@@ -21,6 +21,7 @@ function loadAllParks() {
 
 function loadSearchType() {
   searchField.innerText = "";
+  parkTblBody.innerHTML = "";
   let option = new Option("Select...", " ");
   searchField.appendChild(option);
 
@@ -68,7 +69,7 @@ function loadSearchType() {
 
 function loadParkTable() {
   parkTbl.style.display = "inline-block";
-  // parkTblBody.innerHTML = "";
+  parkTblBody.innerHTML = "";
 
   const selectedValue = searchField.value;
 
@@ -90,6 +91,10 @@ function loadParkTable() {
         );
       }
     });
+  } else if (byAllField.checked) {
+      nationalParksArray.forEach((nationalPark) => {
+        buildParkRow(parkTblBody, nationalPark)
+      });
   }
 }
 
