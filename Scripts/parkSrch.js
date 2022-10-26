@@ -62,12 +62,7 @@ function loadParkTable() {
       if (selectedValue === nationalPark.State) {
         buildParkRow(
           parkTblBody,
-          nationalPark.LocationName,
-          nationalPark.Address,
-          nationalPark.City,
-          nationalPark.State,
-          nationalPark.ZipCode,
-          nationalPark.Phone
+          nationalPark
         );
       }
     });
@@ -76,42 +71,36 @@ function loadParkTable() {
       if (nationalPark.LocationName.includes(selectedValue)) {
         buildParkRow(
           parkTblBody,
-          nationalPark.LocationName,
-          nationalPark.Address,
-          nationalPark.City,
-          nationalPark.State,
-          nationalPark.ZipCode,
-          nationalPark.Phone
+          nationalPark
         );
       }
     });
   }
 }
 
-function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
+function buildParkRow(tableBody, nationalPark) {
   let row = tableBody.insertRow(-1);
 
   let cell1 = row.insertCell(0);
-  cell1.innerText = name;
+  cell1.innerText = nationalPark.LocationName;
 
   let cell2 = row.insertCell(1);
-  cell2.innerText = address;
+  cell2.innerText = nationalPark.Address;
 
   let cell3 = row.insertCell(2);
-  cell3.innerText = city;
+  cell3.innerText = nationalPark.City;
 
   let cell4 = row.insertCell(3);
-  cell4.innerText = state;
+  cell4.innerText = nationalPark.State;
 
   let cell5 = row.insertCell(4);
-  cell5.innerText = zipCode;
+  cell5.innerText = nationalPark.ZipCode;
 
   let cell6 = row.insertCell(5);
-  cell6.innerText = phone;
+  cell6.innerText = nationalPark.Phone;
 
   let cell7 = row.insertCell(6);
-
-  nationalParksArray.forEach((nationalPark) => {
+  
     if (nationalPark.Visit) {
       const web = document.createElement("a");
       let link = document.createTextNode(nationalPark.Visit);
@@ -121,7 +110,8 @@ function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
       web.target = "_blank";
       cell7.appendChild(web);
     }
-  });
+
+  
 
   // nationalParksArray.forEach(park => {
   //   if (park.Visit == true) {
