@@ -66,8 +66,6 @@ function buildCard(mountain) {
     divContainer.className = "card-body";
     cardSection.appendChild(divContainer);
     divContainer.append(cardTitle, cardDescription, elevation, coords, effort, removeBtn);
-
-    
 }
 
 // calling the action of functions
