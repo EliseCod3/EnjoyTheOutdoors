@@ -7,8 +7,8 @@ const changeableLabel = document.getElementById("changeable-label");
 const parkTblBody = document.getElementById("parkTblBody");
 
 const parkTbl = document.getElementById("parkTbl");
-const statesListSection = document.getElementById("state-List-Section");
-const parkTypeSection = document.getElementsByClassName("park-type-section");
+// const statesListSection = document.getElementById("state-List-Section");
+// const parkTypeSection = document.getElementsByClassName("park-type-section");
 
 function loadSearchType() {
   searchField.innerText = "";
