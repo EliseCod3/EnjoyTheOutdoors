@@ -63,8 +63,9 @@ function buildCard(mountain) {
     removeBtn.onclick = RemoveAddedCard;
 
     const divContainer = document.createElement("div");
-    
-
+    divContainer.className = "card-body";
+    cardSection.appendChild(divContainer);
+    divContainer.append(cardTitle, cardDescription, elevation, coords, effort, removeBtn);
 
     
 }
