@@ -29,27 +29,35 @@
           </ul>
     </div>
 
-    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-      <label class="btn btn-outline-primary" for="btnradio1" onclick="selectLocation()" >By Location</label>
-    
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-      <label class="btn btn-outline-primary" for="btnradio2" onclick="selectParkType()">By Park Type</label>
+    <div class="container">
+      <input type="radio" name="selectBtn" id="byState">
+      <label for="byState">By State</label>
+
+      <input type="radio" name="selectBtn" id="byType">
+      <label for="byType">By Type</label>
     </div>
 
-    <div id="state-List-Section" style ="display: none;" class="container">
-        <label for="states-List">States/Territories</label><br>
-        <select name="statesList" id="states-List" onchange="selectState();">
-            <option value="">Select...</option>
-        </select>
-    </div>
-
-    <div id="park-type-section" style ="display: none;" class="container">
-      <label for="park-Type-List">Park Type</label><br>
-      <select name="parkTypeList" id="park-Type-List" onchange="selectPark();">
-        <option value="">Select...</option>
+    <div>
+      <label id="changeable-label">Choose Search</label>
+      <select id="search-field">
       </select>
     </div>
+
+    <!-- <div style="display: none;" id="dropdown-section">
+      <div id="state-List-Section" style ="display: none;" class="container">
+          <label for="states-List">States/Territories</label><br>
+          <select name="statesList" id="states-List">
+              <option value="">Select...</option>
+          </select>
+      </div>
+  
+      <div id="park-type-section" style="display: none;" class="container">
+        <label for="park-Type-List">Park Type</label><br>
+        <select name="parkTypeList" id="park-Type-List">
+          <option value="">Select...</option>
+        </select>
+      </div>
+    </div> -->
 
     <div class="container justify-content-center">
         <h3>Park Information</h3>
@@ -73,6 +81,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="./Scripts/nationalParkData.js"></script>
     <script src="./Scripts/locationData.js"></script>
+    <script src="./Scripts/parkTypeData.js"></script>
     <script src="./Scripts/parkSrch.js"></script>
 </body>
 </html>

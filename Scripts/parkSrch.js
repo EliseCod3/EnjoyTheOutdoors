@@ -1,74 +1,91 @@
 "use strict";
 
-window.onload = () => {
-  loadStatesList();
-};
+const searchField = document.getElementById("search-field");
+const byLocationField = document.getElementById("byState");
+const byTypeField = document.getElementById("byType");
+const changeableLabel = document.getElementById("changeable-label");
+const parkTblBody = document.getElementById("parkTblBody");
 
-const statesList = document.getElementById("states-List");
-const parkList = document.getElementById("park-Type-List");
 const parkTbl = document.getElementById("parkTbl");
 const statesListSection = document.getElementById("state-List-Section");
 const parkTypeSection = document.getElementsByClassName("park-type-section");
 
-function loadStatesList() {
-  locationsArray.forEach((location) => {
-    let option = new Option(location);
-    statesList.appendChild(option);
-  });
-}
+function loadSearchType() {
+  searchField.innerText = "";
+  let option = new Option("Select...", " ");
+  searchField.appendChild(option);
 
-function loadParkTypeList() {
-  parkTypesArray.forEach(parkType => {
-    let option = new Option(parkType);
-    parkList.appendChild(option);
-  });
-}
-
-function selectParkType() {
-  selectPark();
-}
-
-function selectPark() {
-  parkTypeSection.style.display = "inline-block";
-  const parkTblBody = document.getElementById("parkTblBody");
-  parkTblBody.innerHTML = "";
-  const selectedParkType = parkList.value;
-  for (const nationalPark of nationalParksArray) {
-    if (nationalPark.LocationName.includes(selectedParkType)) {
-      loadParkTable(nationalPark);
-    }
+  if (byLocationField.checked) {
+    changeableLabel.innerHTML = "States/Territories";
+    locationsArray.forEach((location) => {
+      let option = new Option(location, location);
+      searchField.appendChild(option);
+    });
+  } else if (byTypeField.checked) {
+    changeableLabel.innerHTML = "Park Type";
+    parkTypesArray.forEach((parkType) => {
+      let option = new Option(parkType, parkType);
+      searchField.appendChild(option);
+    });
   }
 }
 
-function selectLocation() {
-  selectState(); 
-}
+// function selectPark() {
+//   parkTypeSection.style.display = "inline-block";
+//   const parkTblBody = document.getElementById("parkTblBody");
+//   parkTblBody.innerHTML = "";
+//   const selectedParkType = searchField.value;
+//   for (const nationalPark of nationalParksArray) {
+//   }
+// }
 
-function selectState() {
-  statesListSection.style.display = "inline-block";
-  const parkTblBody = document.getElementById("parkTblBody");
-  parkTblBody.innerHTML = "";
-  const selectedState = statesList.value;
-  for (const nationalPark of nationalParksArray) {
-    if (nationalPark.State == selectedState) {
-      loadParkTable(nationalPark);
-    }
-  }
-}
+// function selectState() {
+//   statesListSection.style.display = "inline";
+//   const parkTblBody = document.getElementById("parkTblBody");
+//   parkTblBody.innerHTML = "";
+//   const selectedState = statesList.value;
+//   for (const nationalPark of nationalParksArray) {
+//     if (nationalPark.State == selectedState) {
+//       loadParkTable(nationalPark);
+//     }
+//   }
+// }
 
-function loadParkTable(nationalPark) {
-  const parkTblBody = document.getElementById("parkTblBody");
+function loadParkTable() {
   parkTbl.style.display = "inline-block";
+  parkTblBody.innerHTML = "";
 
-  buildParkRow(
-    parkTblBody,
-    nationalPark.LocationName,
-    nationalPark.Address,
-    nationalPark.City,
-    nationalPark.State,
-    nationalPark.ZipCode,
-    nationalPark.Phone
-  );
+  const selectedValue = searchField.value;
+
+  if (byLocationField.checked) {
+    nationalParksArray.forEach((nationalPark) => {
+      if (selectedValue === nationalPark.State) {
+        buildParkRow(
+          parkTblBody,
+          nationalPark.LocationName,
+          nationalPark.Address,
+          nationalPark.City,
+          nationalPark.State,
+          nationalPark.ZipCode,
+          nationalPark.Phone
+        );
+      }
+    });
+  } else if (byTypeField.checked) {
+    nationalParksArray.forEach((nationalPark) => {
+      if (nationalPark.LocationName.includes(selectedValue)) {
+        buildParkRow(
+          parkTblBody,
+          nationalPark.LocationName,
+          nationalPark.Address,
+          nationalPark.City,
+          nationalPark.State,
+          nationalPark.ZipCode,
+          nationalPark.Phone
+        );
+      }
+    });
+  }
 }
 
 function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
@@ -94,7 +111,7 @@ function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
 
   let cell7 = row.insertCell(6);
 
-  nationalParksArray.forEach(nationalPark => {
+  nationalParksArray.forEach((nationalPark) => {
     if (nationalPark.Visit) {
       const web = document.createElement("a");
       let link = document.createTextNode(nationalPark.Visit);
@@ -106,10 +123,14 @@ function buildParkRow(tableBody, name, address, city, state, zipCode, phone) {
     }
   });
 
-
   // nationalParksArray.forEach(park => {
   //   if (park.Visit == true) {
   //     cell7.innerText = park.Visit;
   //   }
   // });
 }
+
+window.onload = () => {
+  onclick = loadSearchType;
+  searchField.onchange = loadParkTable;
+};
