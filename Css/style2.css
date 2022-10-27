@@ -23,6 +23,8 @@ header {
     background-image: url(https://i.pinimg.com/564x/bf/4a/eb/bf4aebaf0af2d0617330b8b0bffcb652.jpg);
     background-size: auto;
     padding-bottom: 0.01rem;
+    border-style: outset;
+    border-color: black;
 }
 div {
     display: inline-flexbox;
@@ -36,6 +38,7 @@ div {
     margin-top: 1rem;
     margin-bottom: 2rem;
     text-align: center;
+    border-style: outset;
 }
 #search-section {
     text-align: center;
@@ -49,6 +52,12 @@ div {
     color: aliceblue;
     padding-left: 15px;
 }
-#byAll {
-
+.radioBtn {
+    font-size: 25px;
+}
+#parkTbl {
+    border-style: solid;
+    border-width: 1rem;
+}.textColor {
+    color;
 }

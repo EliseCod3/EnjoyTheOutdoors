@@ -7,6 +7,8 @@ header {
     align-content: center;
     text-align: center;
     padding-bottom: 0.9rem;
+    border-style: outset;
+    border-color: black;
 }
 h1 {
     font-size: 4rem;
@@ -20,6 +22,7 @@ div {
 }
 ul {
     background-color:black;
+    
 }
 li {
     background-color:burlywood;
@@ -74,4 +77,10 @@ margin-bottom: 1rem;
     color: aliceblue;
     align-content: center;
     text-align: center;
+}
+#view-all-btn{
+    margin-left: 2rem;
+}
+#mountian-dropdown-list{
+    margin-left: 2rem;
 }
