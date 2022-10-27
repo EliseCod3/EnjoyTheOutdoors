@@ -33,11 +33,13 @@ function buildCard(mountain) {
     // create cardbody and put in display section
     let cardSection = document.createElement("div");
     cardSection.className = "card";
+    cardSection.className = "cardColor";
     displaySection.appendChild(cardSection);
 
     // card image
     let cardImg = document.createElement("img");
     cardImg.className = "card-img-top";
+    cardImg.className = "imgBorder";
     cardImg.alt = mountain.name;
     cardImg.src = "images/" + mountain.img;
 
@@ -51,7 +53,7 @@ function buildCard(mountain) {
     cardDescription.innerText = mountain.desc;
 
     let elevation = document.createElement("p");
-    elevation.innerText = `${mountain.elevation}ft`;
+    elevation.innerText = `Elevation: ${mountain.elevation}ft`;
 
     let coords = document.createElement("p");
     coords.innerText = `Coordinates: ${mountain.coords.lat}, ${mountain.coords.lng}`;
@@ -61,6 +63,7 @@ function buildCard(mountain) {
 
     let removeBtn = document.createElement("button");
     removeBtn.className = "btn btn-dark";
+    removeBtn.className = "spacing";
     removeBtn.innerText = "Remove Mountain";
 
     // get the button to remove the card

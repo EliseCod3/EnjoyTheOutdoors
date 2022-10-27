@@ -7,7 +7,39 @@ div {
     margin: 2rem;
 }
 header {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     background-image: url(/Images/CDome-StoryImage.jpg);
+}
+ul {
+    background-color: cornflowerblue;
+}
+li {
+    background-color: cornflowerblue;
+}
+.nav-link {
+    color: aliceblue;
+}
+#tblHead {
+    background-color:darkseagreen;
+}
+.cardColor{
+background-color: burlywood;
+border-radius: 10%;
+margin-bottom: 1rem;
+}
+.spacing {
+    margin-bottom: 1rem;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 7%;
+    width: 14rem;
+}
+.imgBorder {
+    border-radius: 25%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+#display-section {
+    width: 52rem;
 }
