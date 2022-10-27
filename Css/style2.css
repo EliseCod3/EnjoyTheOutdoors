@@ -21,9 +21,8 @@ header {
     align-content: center;
     text-align: center;
     background-image: url(https://i.pinimg.com/564x/bf/4a/eb/bf4aebaf0af2d0617330b8b0bffcb652.jpg);
-    background-repeat:;
     background-size: auto;
-    padding-bottom: 0.1rem;
+    padding-bottom: 0.01rem;
 }
 div {
     display: inline-flexbox;
@@ -32,4 +31,12 @@ div {
 .padding {
     padding-left: 1rem;
     padding-right: 1rem;
+}
+#typeSection {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+#search-section {
+    text-align: center;
 }
