@@ -10,6 +10,7 @@ const viewAllBtn = document.getElementById("view-all-btn");
 const searchSection = document.getElementById("search-section");
 
 const parkTbl = document.getElementById("parkTbl");
+const tblHead = document.getElementById("tblHead");
 
 function loadAllParks() {
   nationalParksArray.forEach((nationalPark) => {
@@ -26,6 +27,7 @@ function loadSearchType() {
 
   if (byLocationField.checked) {
     searchSection.style.display = "block";
+    tblHead.style.display = "none";
     changeableLabel.innerHTML = "States/Territories";
     locationsArray.forEach((location) => {
       let option = new Option(location, location);
@@ -33,6 +35,7 @@ function loadSearchType() {
     });
   } else if (byTypeField.checked) {
     searchSection.style.display = "block";
+    tblHead.style.display = "none";
     changeableLabel.innerHTML = "Park Type";
     parkTypesArray.forEach((parkType) => {
       let option = new Option(parkType, parkType);
@@ -54,6 +57,7 @@ function loadParkTable() {
   if (byLocationField.checked) {
     nationalParksArray.forEach((nationalPark) => {
       if (selectedValue === nationalPark.State) {
+        tblHead.style.display = "block";
         buildParkRow(
           parkTblBody,
           nationalPark
@@ -63,6 +67,7 @@ function loadParkTable() {
   } else if (byTypeField.checked) {
     nationalParksArray.forEach((nationalPark) => {
       if (nationalPark.LocationName.includes(selectedValue)) {
+        tblHead.style.display = "block";
         buildParkRow(
           parkTblBody,
           nationalPark
@@ -71,6 +76,7 @@ function loadParkTable() {
     });
   } else if (byAllField.checked) {
       nationalParksArray.forEach((nationalPark) => {
+        tblHead.style.display = "block";
         buildParkRow(parkTblBody, nationalPark)
       });
   }
