@@ -7,9 +7,14 @@ div {
     margin: 2rem;
 }
 header {
-    font-size: 4rem;
     margin-bottom: 1rem;
     background-image: url(/Images/CDome-StoryImage.jpg);
+}
+h1 {
+    font-size: 4rem;
+    animation: bounce;
+    animation-duration: 2s;
+    padding-bottom: 2rem;
 }
 ul {
     background-color: cornflowerblue;

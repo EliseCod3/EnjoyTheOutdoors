@@ -1,0 +1,77 @@
+* {
+    align-content: center;
+    text-align: center;
+}
+header {
+    background-image: url(/Images/CDome-StoryImage.jpg);
+    align-content: center;
+    text-align: center;
+    padding-bottom: 0.1rem;
+}
+h1 {
+    font-size: 4rem;
+    animation-duration: 3s;
+    padding-bottom: 1rem;
+    color: aliceblue;
+}
+div {
+    display: inline-flexbox;
+    
+}
+ul {
+    background-color:black;
+}
+li {
+    background-color:burlywood;
+}
+.nav-link {
+    color: aliceblue;
+}
+#tblHead {
+    background-color:darkseagreen;
+}
+.cardColor{
+background-color: burlywood;
+border-radius: 10%;
+margin-bottom: 1rem;
+}
+.spacing {
+    margin-bottom: 1rem;
+    margin-left: 2.7rem;
+    margin-right: 1rem;
+    align-content: center;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 7%;
+    width: 14rem;
+}
+.imgBorder {
+    border-radius: 25%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 500px;
+}
+#display-section {
+    width: 52rem;
+}
+#nav-bar {
+    border-radius: 33%;
+}
+#selectSection {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+#selectLabel {
+    font-size: 1.5rem;
+    margin-right: 5rem;
+}
+.padding {
+    padding-left: 3rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: aliceblue;
+    align-content: center;
+    text-align: center;
+}

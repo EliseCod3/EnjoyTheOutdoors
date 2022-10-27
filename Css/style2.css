@@ -1,0 +1,35 @@
+ul {
+    background-color:black;
+}
+li {
+    background-color:burlywood;
+}
+.spacing {
+    margin-bottom: 1rem;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 7%;
+    width: 14rem;
+}
+h1 {
+    font-size: 4rem;
+    animation-duration: 3s;
+    padding-bottom: 2rem;
+    color: aliceblue;
+}
+header {
+    align-content: center;
+    text-align: center;
+    background-image: url(https://i.pinimg.com/564x/bf/4a/eb/bf4aebaf0af2d0617330b8b0bffcb652.jpg);
+    background-repeat:;
+    background-size: auto;
+    padding-bottom: 0.1rem;
+}
+div {
+    display: inline-flexbox;
+    
+}
+.padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

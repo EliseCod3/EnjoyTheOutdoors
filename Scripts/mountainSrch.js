@@ -50,15 +50,19 @@ function buildCard(mountain) {
     
     //Add information 
     let cardDescription = document.createElement("p");
+    cardDescription.className = "padding";
     cardDescription.innerText = mountain.desc;
 
     let elevation = document.createElement("p");
+    elevation.className = "padding";
     elevation.innerText = `Elevation: ${mountain.elevation}ft`;
 
     let coords = document.createElement("p");
+    coords.className = "padding";
     coords.innerText = `Coordinates: ${mountain.coords.lat}, ${mountain.coords.lng}`;
 
     let effort = document.createElement("p");
+    effort.className = "padding";
     effort.innerText = mountain.effort;
 
     let removeBtn = document.createElement("button");
