@@ -2,13 +2,12 @@
     align-content: center;
     text-align: center;
 }
-div {
-    display: inline-flexbox;
-    margin: 2rem;
-}
+
 header {
-    margin-bottom: 1rem;
-    background-image: url(/Images/CDome-StoryImage.jpg);
+    background-image: url(https://i.pinimg.com/564x/4f/ed/4f/4fed4f8e48e1869fd913af316088eb7b.jpg);
+    padding-bottom: 0.01rem;
+    border-style: outset;
+    border-color: black;
 }
 h1 {
     font-size: 4rem;
@@ -17,10 +16,10 @@ h1 {
     padding-bottom: 2rem;
 }
 ul {
-    background-color: cornflowerblue;
+    background-color:black;
 }
 li {
-    background-color: cornflowerblue;
+    background-color:cadetblue;
 }
 .nav-link {
     color: aliceblue;
@@ -47,4 +46,7 @@ margin-bottom: 1rem;
 }
 #display-section {
     width: 52rem;
+}
+#describePage {
+    margin-top: 2rem;
 }
