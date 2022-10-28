@@ -14,6 +14,7 @@ h1 {
     animation: bounce;
     animation-duration: 2s;
     padding-bottom: 2rem;
+    font-family: 'Abril Fatface', cursive;
 }
 ul {
     background-color:black;
@@ -60,4 +61,13 @@ margin-bottom: 1rem;
     border-style: outset;
     border-color: black;
     padding: 10px;
+}
+.logo {
+    padding-right: 10px;
+    font-family: 'Courgette', cursive;
+    float: right;
+    color:burlywood;
+}
+p {
+    font-family: 'Abril Fatface', cursive;
 }

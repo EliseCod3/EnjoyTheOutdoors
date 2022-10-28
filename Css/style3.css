@@ -15,6 +15,7 @@ h1 {
   animation-duration: 3s;
   padding-bottom: 1rem;
   color: aliceblue;
+  font-family: 'Abril Fatface', cursive;
 }
 div {
   display: inline-flexbox;
@@ -89,4 +90,10 @@ li {
 }
 #bell-icon {
     animation-duration: 1s;
+}
+.logo {
+  padding-right: 10px;
+  font-family: 'Courgette', cursive;
+  float: right;
+  color:burlywood;
 }

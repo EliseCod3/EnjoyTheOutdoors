@@ -16,6 +16,7 @@ h1 {
     animation-duration: 3s;
     padding-bottom: 2rem;
     color: aliceblue;
+    font-family: 'Abril Fatface', cursive;
 }
 header {
     align-content: center;
@@ -63,4 +64,10 @@ div {
 }
 #bell-icon {
     animation-duration: 1s;
+}
+.logo {
+    padding-right: 10px;
+    font-family: 'Courgette', cursive;
+    float: right;
+    color:burlywood;
 }
