@@ -61,3 +61,6 @@ div {
 }.textColor {
     color;
 }
+#bell-icon {
+    animation-duration: 1s;
+}

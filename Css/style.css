@@ -14,7 +14,6 @@ h1 {
     animation: bounce;
     animation-duration: 2s;
     padding-bottom: 2rem;
-    color: aliceblue;
 }
 ul {
     background-color:black;
@@ -53,4 +52,7 @@ margin-bottom: 1rem;
 }
 #carousel {
     margin-top: 2rem;
+}
+#bell-icon {
+    animation-duration: 1s;
 }
