@@ -15,6 +15,7 @@ function loadMountainList() {
 
 // select the mountain in dropdown and call function to display card
 function selectMountain() {
+    displaySection.style.display = "block";
     const selectedMountain = mountainDropdown.value;
     for (const mountain of mountainsArray) {
         if (mountain.name == selectedMountain) {
