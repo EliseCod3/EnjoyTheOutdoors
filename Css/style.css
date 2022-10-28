@@ -14,6 +14,7 @@ h1 {
     animation: bounce;
     animation-duration: 2s;
     padding-bottom: 2rem;
+    color: aliceblue;
 }
 ul {
     background-color:black;

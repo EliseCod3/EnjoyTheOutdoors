@@ -3,6 +3,7 @@
 const mountainDropdown = document.getElementById("mountian-dropdown-list");
 const displaySection = document.getElementById("display-section");
 const viewAllBtn = document.getElementById("view-all-btn");
+const clearAllBtn = document.getElementById("clear-all-btn");
 
 // Add the datalist of mountains to html dropdown
 function loadMountainList() {
@@ -23,9 +24,14 @@ function selectMountain() {
 }
 
 function loadAllMountains() {
+    displaySection.style.display = "block";
     mountainsArray.forEach((mountain) => {
         buildCard(mountain);
     });
+}
+
+function clearAllMountains() {
+    displaySection.style.display = "none";
 }
 
 // create the card to be displayed
@@ -87,4 +93,5 @@ window.onload = () => {
     loadMountainList();
     mountainDropdown.onchange = selectMountain;
     viewAllBtn.onclick = loadAllMountains;
+    clearAllBtn.onclick = clearAllMountains;
   };
