@@ -56,3 +56,8 @@ margin-bottom: 1rem;
 #bell-icon {
     animation-duration: 1s;
 }
+#carousel {
+    border-style: outset;
+    border-color: black;
+    padding: 10px;
+}
