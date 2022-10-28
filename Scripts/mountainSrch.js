@@ -32,7 +32,7 @@ function loadAllMountains() {
 }
 
 function clearAllMountains() {
-    displaySection.style.display = "none";
+    displaySection.innerHTML = "";
 }
 
 // create the card to be displayed
